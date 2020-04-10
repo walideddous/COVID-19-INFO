@@ -1,4 +1,4 @@
-# Devcamper API
+# Help Against COVID-19
 
 The measures currently being taken to combat the epidemic are unprecedented. In the coming weeks, many people will be risking their health, giving their energy 15 hours a day to save lives.
 
