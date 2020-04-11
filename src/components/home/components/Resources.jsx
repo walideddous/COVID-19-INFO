@@ -12,7 +12,7 @@ const Resources = () => {
           <div className='col-md-4'>
             <h3>REACT JS </h3>
             <div className='feature'>
-              <i class='fab fa-react fa-3x'></i>
+              <i className='fab fa-react fa-3x'></i>
             </div>
             <p>Built with the latest React JS</p>
           </div>

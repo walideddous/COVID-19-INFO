@@ -25,7 +25,14 @@ const Contact = () => {
           </a>
         </div>
         <hr className='socket' />
-        &copy; Help Theme.
+        &copy;
+        <a
+          href='https://www.xing.com/profile/walid_eddous/cv'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Walid Eddous.
+        </a>
       </div>
     </footer>
   );
