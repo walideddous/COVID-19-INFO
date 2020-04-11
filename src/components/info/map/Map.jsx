@@ -5,6 +5,14 @@ import styles from "./map.module.css";
 
 import { fetchLongLat } from "../../../api";
 
+let mapBoxKey;
+
+if (process.env.NODE_ENV !== "production") {
+  mapBoxKey = process.env.REACT_APP_MAPBOX_TOKEN;
+} else {
+  mapBoxKey = process.env.MAPBOX_TOKEN;
+}
+
 const MapCorona = () => {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -34,7 +42,7 @@ const MapCorona = () => {
         setSelectedCountry(null);
       }}
       mapStyle='mapbox://styles/mapbox/light-v9'
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+      mapboxApiAccessToken={mapBoxKey}
     >
       {countries.data &&
         countries.data.map((country, i) => (
