@@ -3,8 +3,24 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/home/Home";
 import Info from "./components/info/Info";
+import Notfound from "./components/NotFound";
 
 import "./App.css";
+
+function App() {
+  return (
+    <Router className='App'>
+      <Navbar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/info' component={Info} />
+        <Route component={Notfound} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
 
 // function useOnScreen(options) {
 //   const [ref, setRef] = React.useState(null);
@@ -26,17 +42,3 @@ import "./App.css";
 
 //   return [setRef, visible];
 // }
-
-function App() {
-  return (
-    <Router className='App'>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/info' component={Info} />
-      </Switch>
-    </Router>
-  );
-}
-
-export default App;
