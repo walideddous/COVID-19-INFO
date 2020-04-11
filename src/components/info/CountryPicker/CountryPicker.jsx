@@ -36,7 +36,7 @@ const CountryPicker = ({ handleChangeCountry }) => {
         duration={1000}
         className='btn btn-primary m-2'
       >
-        Click to See Statistic
+        <span style={{ color: "white" }}>Click to See Map and Statistic</span>
       </Link>
     </FormControl>
   );

@@ -4,6 +4,8 @@ import Chart from "./Chart/Chart";
 import CountryPicker from "./CountryPicker/CountryPicker";
 import MapCorona from "./map/Map";
 import Contact from "../home/components/Contact";
+import TableCountries from "./Table/Table";
+// Image
 import coronaImage from "../../img/corona.png";
 
 // Api fetch data
@@ -22,6 +24,10 @@ const Info = () => {
 
   const [data, setData] = useState({});
   const [country, setCountry] = useState("");
+  const [click, setClick] = useState({
+    map: true,
+    table: false,
+  });
 
   const handleChangeCountry = async (country) => {
     const res = await fetchData(country);
@@ -34,7 +40,26 @@ const Info = () => {
         <img className={styles.image} src={coronaImage} alt='COVID-19' />
         <CountryPicker handleChangeCountry={handleChangeCountry} />
         <Cards data={data} />
-        <MapCorona country={country} />
+        <div className={styles.buttons}>
+          <button
+            className='btn btn-primary'
+            onClick={() => {
+              setClick({ map: true, table: false });
+            }}
+            active
+          >
+            Map
+          </button>
+          <button
+            className='btn btn-primary'
+            onClick={() => {
+              setClick({ map: false, table: true });
+            }}
+          >
+            Table
+          </button>
+        </div>
+        {click.map ? <MapCorona country={country} /> : <TableCountries />}
         <Chart data={data} country={country} />
       </div>
       <Contact />

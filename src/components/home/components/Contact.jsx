@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <footer id='contact'>
       <div className='row justify-content-center'>
-        <div className='col-5 text-center'>
+        <div className='col-8 text-center'>
           <a href='/'>
             <img src={help} alt='logo' />
           </a>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import ReactMapGL, { Marker, Popup, FullscreenControl } from "react-map-gl";
 import CuntUp from "react-countup";
 import config from "../../../config/config.json";
 import styles from "./map.module.css";
@@ -59,6 +59,9 @@ const MapCorona = () => {
             </button>
           </Marker>
         ))}
+      <div style={{ position: "absolute", right: 0 }}>
+        <FullscreenControl container={document.getElementById("root")} />
+      </div>
       {selectedCountry && (
         <Popup
           latitude={selectedCountry.countryInfo.lat}

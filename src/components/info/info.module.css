@@ -13,9 +13,19 @@ body {
 .image {
   width: 370px;
   margin-top: 80px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+  margin: 10px 0;
+}
+
+.buttons button {
+  width: 45%;
+}
 @media (max-width: 770px) {
   .container {
     margin-top: 40px;
@@ -23,5 +33,15 @@ body {
 
   .image {
     width: 80%;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 10px 0;
+  }
+
+  .buttons button {
+    width: 45%;
   }
 }
