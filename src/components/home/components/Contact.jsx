@@ -14,8 +14,6 @@ const Contact = () => {
             thats represent everything your business to compare in the modern
             marketplace
           </p>
-          <strong>Contact Info</strong>
-          <p>(000) 000 - 000000</p>
           <a
             href='https://github.com/walideddous/Help-against-COVID-19'
             target='_blank'

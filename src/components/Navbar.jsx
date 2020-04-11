@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
       <a className='navbar-brand' href='/'>
-        <img src={help} alt='help' /> Help against Covid-19
+        <img src={help} alt='help' /> Help Covid-19
       </a>
       <button
         className='navbar-toggler'

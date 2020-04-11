@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import CuntUp from "react-countup";
+import config from "../../../config/config.json";
 import styles from "./map.module.css";
 
 import { fetchLongLat } from "../../../api";
@@ -41,7 +42,7 @@ const MapCorona = () => {
       onClick={() => {
         setSelectedCountry(null);
       }}
-      mapStyle='mapbox://styles/mapbox/light-v9'
+      mapStyle={config.MapBox}
       mapboxApiAccessToken={mapBoxKey}
     >
       {countries.data &&

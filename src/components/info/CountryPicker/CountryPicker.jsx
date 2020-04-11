@@ -35,7 +35,6 @@ const CountryPicker = ({ handleChangeCountry }) => {
         smooth={true}
         duration={1000}
         className='btn btn-primary m-2'
-        style={{ color: "white" }}
       >
         Click to See Statistic
       </Link>

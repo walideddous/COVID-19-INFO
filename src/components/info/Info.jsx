@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import Cards from "./Cards/Cards";
 import Chart from "./Chart/Chart";
 import CountryPicker from "./CountryPicker/CountryPicker";
 import MapCorona from "./map/Map";
+import Contact from "../home/components/Contact";
 import coronaImage from "../../img/corona.png";
 
 // Api fetch data
@@ -28,13 +29,16 @@ const Info = () => {
     setCountry(country);
   };
   return (
-    <div className={styles.container}>
-      <img className={styles.image} src={coronaImage} alt='COVID-19' />
-      <Cards data={data} />
-      <CountryPicker handleChangeCountry={handleChangeCountry} />
-      <MapCorona country={country} />
-      <Chart data={data} country={country} />
-    </div>
+    <Fragment>
+      <div className={styles.container}>
+        <img className={styles.image} src={coronaImage} alt='COVID-19' />
+        <CountryPicker handleChangeCountry={handleChangeCountry} />
+        <Cards data={data} />
+        <MapCorona country={country} />
+        <Chart data={data} country={country} />
+      </div>
+      <Contact />
+    </Fragment>
   );
 };
 
