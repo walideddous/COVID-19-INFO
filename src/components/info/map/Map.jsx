@@ -21,10 +21,6 @@ const MapCorona = () => {
       setCountries(await fetchLongLat());
     };
     fetchCountriesInfo();
-
-    window.addEventListener("click", () => {
-      if (selectedCountry) setSelectedCountry(null);
-    });
   }, []);
 
   return (
@@ -34,13 +30,16 @@ const MapCorona = () => {
       onViewportChange={(viewport) => {
         setViewport(viewport);
       }}
+      onClick={() => {
+        setSelectedCountry(null);
+      }}
       mapStyle='mapbox://styles/mapbox/light-v9'
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
       {countries.data &&
-        countries.data.map((country) => (
+        countries.data.map((country, i) => (
           <Marker
-            key={country.countryInfo._id}
+            key={i}
             latitude={country.countryInfo.lat}
             longitude={country.countryInfo.long}
           >
