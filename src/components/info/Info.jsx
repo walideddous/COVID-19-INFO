@@ -17,7 +17,7 @@ const Info = () => {
     };
 
     fetchAPI();
-  }, [fetchData]);
+  }, []);
 
   const [data, setData] = useState({});
   const [country, setCountry] = useState("");

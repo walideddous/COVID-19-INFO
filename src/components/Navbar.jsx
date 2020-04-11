@@ -26,27 +26,7 @@ const Navbar = () => {
           </li>
           <li className='nav-item'>
             <Link className='nav-link' to='/info'>
-              Info
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              className='nav-link'
-              to='features'
-              smooth={true}
-              duration={2000}
-            >
-              Add
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              className='nav-link'
-              to='resources'
-              smooth={true}
-              duration={2000}
-            >
-              Resources
+              Map
             </Link>
           </li>
         </ul>

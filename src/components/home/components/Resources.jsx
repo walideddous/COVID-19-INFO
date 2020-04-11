@@ -10,11 +10,11 @@ const Resources = () => {
             <div className='heading-underline'></div>
           </div>
           <div className='col-md-4'>
-            <h3>HTML 5 </h3>
+            <h3>REACT JS </h3>
             <div className='feature'>
-              <i className='fas fa-code fa-3x'></i>
+              <i class='fab fa-react fa-3x'></i>
             </div>
-            <p>Built with the latest HTML 5</p>
+            <p>Built with the latest React JS</p>
           </div>
           <div className='col-md-4'>
             <h3>Bootstrap 4 </h3>

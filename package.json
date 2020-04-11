@@ -10,12 +10,11 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
-    "dotenv": "^8.2.0",
-    "mapbox-gl": "^1.9.1",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
+    "react-map-gl": "^5.2.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.16"
@@ -40,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

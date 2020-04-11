@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import client1 from "../../../img/client1.png";
-import client2 from "../../../img/client2.png";
+import client1 from "../../../img/alexandre.jpg";
+import client2 from "../../../img/marion.jpg";
 
 const Feedback = () => {
   return (

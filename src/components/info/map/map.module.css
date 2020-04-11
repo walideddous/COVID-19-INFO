@@ -1,5 +1,27 @@
 .container {
-  display: block;
-  height: 764px;
-  width: 1529px;
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  margin-bottom: 40px;
+}
+
+.markerButton {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.countryFlag {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 770px) {
+  .container {
+    width: 85%;
+    height: 80%;
+  }
 }

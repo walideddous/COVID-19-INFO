@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NativeSelect, FormControl } from "@material-ui/core";
+import { Link } from "react-scroll";
+
 import { fetchCountries } from "../../../api";
 
 import styles from "./CountryPicker.module.css";
@@ -28,6 +30,15 @@ const CountryPicker = ({ handleChangeCountry }) => {
             </option>
           ))}
       </NativeSelect>
+      <Link
+        to='Chart'
+        smooth={true}
+        duration={1000}
+        className='btn btn-primary m-2'
+        style={{ color: "white" }}
+      >
+        Click to See Statistic
+      </Link>
     </FormControl>
   );
 };

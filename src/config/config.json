@@ -1,3 +1,4 @@
 {
-  "TOKEN": "pk.eyJ1Ijoid2FsaWQyMDIwIiwiYSI6ImNrOHQzcXV0ZjAxYzczZHQ4Zm85bGtld3YifQ.SrUkf-kwNwxqUbLnD1D90g"
+  "APIEndPoint": "https://covid19.mathdro.id/api",
+  "APIEndPointcountries": "https://corona.lmao.ninja/countries"
 }

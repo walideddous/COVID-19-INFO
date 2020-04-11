@@ -13,7 +13,7 @@ const Features = () => {
             <div className='col-md-4'>
               <div className='feature'>
                 <i
-                  className='fas fa-play-circle fa-4x'
+                  className='fas fa-hands-helping fa-4x'
                   data-fa-transform='shrink-3 up-5'
                 ></i>
                 <h3>I need help</h3>
@@ -23,7 +23,7 @@ const Features = () => {
             <div className='col-md-4'>
               <div className='feature'>
                 <i
-                  className='fas fa-sliders-h fa-4x'
+                  className='fas fa-hands-helping fa-4x'
                   data-fa-transform='shrink-4.5 up-4.5'
                 ></i>
                 <h3>I need help</h3>
@@ -35,13 +35,13 @@ const Features = () => {
             <div className='col-md-4'>
               <div className='feature'>
                 <i
-                  className='far fa-address-book fa-4x'
+                  className='fas fa-people-carry fa-4x'
                   data-fa-transform='shrink-3 up-5'
                 ></i>
-                <h3>Contact Form</h3>
+                <h3>offer my help</h3>
                 <p>
-                  Animate.css and Waypoints.js allow for smooth animation
-                  scrolling down the site.
+                  I can help front-line workers and people in the populations
+                  subprime
                 </p>
               </div>
             </div>

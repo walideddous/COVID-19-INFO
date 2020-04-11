@@ -1,39 +1,151 @@
-import mapboxgl from "mapbox-gl";
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import CuntUp from "react-countup";
 import styles from "./map.module.css";
-import config from "../../../config/config.json";
 
 import { fetchLongLat } from "../../../api";
 
-class MapCorona extends Component {
-  async componentDidMount() {
-    mapboxgl.accessToken = config.TOKEN;
-    const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: "mapbox://styles/mapbox/streets-v10",
-      zoom: 1.5,
-      center: [0, 20],
-    });
+const MapCorona = () => {
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [viewport, setViewport] = useState({
+    width: "80vw",
+    height: "80vh",
+    latitude: 33,
+    longitude: 9,
+    zoom: 4,
+  });
 
-    const res = await fetchLongLat();
-    const countriesInfo = res.data.map((el) => el.countryInfo);
-    countriesInfo.map((country) => {
-      new mapboxgl.Marker({
-        draggable: true,
-      })
-        .setLngLat([country.long, country.lat])
-        .addTo(map);
-    });
-  }
+  useEffect(() => {
+    const fetchCountriesInfo = async () => {
+      setCountries(await fetchLongLat());
+    };
+    fetchCountriesInfo();
 
-  render() {
-    return (
-      <div
-        className={styles.container}
-        ref={(el) => (this.mapContainer = el)}
-      ></div>
-    );
-  }
-}
+    window.addEventListener("click", () => {
+      if (selectedCountry) setSelectedCountry(null);
+    });
+  }, []);
+
+  return (
+    <ReactMapGL
+      {...viewport}
+      className={styles.container}
+      onViewportChange={(viewport) => {
+        setViewport(viewport);
+      }}
+      mapStyle='mapbox://styles/mapbox/light-v9'
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+    >
+      {countries.data &&
+        countries.data.map((country) => (
+          <Marker
+            key={country.countryInfo._id}
+            latitude={country.countryInfo.lat}
+            longitude={country.countryInfo.long}
+          >
+            <button
+              className={styles.markerButton}
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedCountry(country);
+              }}
+            >
+              <img
+                className={styles.countryFlag}
+                src={country.countryInfo.flag}
+                alt='flag'
+              />
+            </button>
+          </Marker>
+        ))}
+      {selectedCountry && (
+        <Popup
+          latitude={selectedCountry.countryInfo.lat}
+          longitude={selectedCountry.countryInfo.long}
+          onClose={() => {
+            setSelectedCountry(null);
+          }}
+        >
+          <div>
+            <h2>{selectedCountry.country}</h2>
+            <p>
+              Total Tests:
+              <CuntUp
+                start={0}
+                end={selectedCountry.tests}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p>
+              Total Infected:
+              <CuntUp
+                start={0}
+                end={selectedCountry.cases}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p>
+              Today Infected :
+              <CuntUp
+                start={0}
+                end={selectedCountry.todayCases}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p style={{ color: "red" }}>
+              Total deaths:
+              <CuntUp
+                start={0}
+                end={selectedCountry.deaths}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p>
+              Today deaths:
+              <CuntUp
+                start={0}
+                end={selectedCountry.todayDeaths}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p style={{ color: "green" }}>
+              Recovered:
+              <CuntUp
+                start={0}
+                end={selectedCountry.recovered}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p>
+              Active:
+              <CuntUp
+                start={0}
+                end={selectedCountry.active}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+            <p>
+              Critical:
+              <CuntUp
+                start={0}
+                end={selectedCountry.critical}
+                duration={2.5}
+                separator=','
+              />
+            </p>
+          </div>
+        </Popup>
+      )}
+    </ReactMapGL>
+  );
+};
 
 export default MapCorona;

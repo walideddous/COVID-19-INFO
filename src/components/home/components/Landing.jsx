@@ -17,7 +17,7 @@ const Landing = () => {
             epidemic.
           </h3>
           <Link
-            className='btn btn-outline-light btn-lg'
+            className='btn btn-secondary btn-lg'
             to='course'
             smooth={true}
             duration={1000}

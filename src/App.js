@@ -22,13 +22,13 @@ function useOnScreen(options) {
         observer.unobserve(ref);
       }
     };
-  }, [ref, visible]);
+  }, [ref, visible, options]);
 
   return [setRef, visible];
 }
 
 function App() {
-  const [setRef, visible] = useOnScreen({ threshold: 1 });
+  console.log(process.env.REACT_APP_MAPBOX_TOKEN);
   return (
     <Router className='App'>
       <Navbar />

@@ -6,26 +6,26 @@ const Contact = () => {
     <footer id='contact'>
       <div className='row justify-content-center'>
         <div className='col-5 text-center'>
-          <img src={help} alt='logo' />
+          <a href='/'>
+            <img src={help} alt='logo' />
+          </a>
           <p>
             At our core is a collection of design and development solutions
             thats represent everything your business to compare in the modern
             marketplace
           </p>
           <strong>Contact Info</strong>
-          <p>(888) 888 - 8888888</p>
-          <a href='' target='_blank'>
-            <i className='fab fa-facebook-square'></i>
-          </a>
-          <a href='' target='_blank'>
-            <i className='fab fa-twitter-square'></i>
-          </a>
-          <a href='' target='_blank'>
-            <i className='fab fa-instagram'></i>
+          <p>(000) 000 - 000000</p>
+          <a
+            href='https://github.com/walideddous/Help-against-COVID-19'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <i className='fab fa-github fa-3x'></i>
           </a>
         </div>
         <hr className='socket' />
-        &copy; Nuno Theme.
+        &copy; Help Theme.
       </div>
     </footer>
   );

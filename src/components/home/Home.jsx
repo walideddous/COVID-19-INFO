@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Landing from "./components/Landing";
-import Course from "./components/Course";
+import Info from "./components/Info";
 import Features from "./components/Features";
 import Resources from "./components/Resources";
 import Feedback from "./components/Feedback";
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Fragment>
       <Landing />
-      <Course />
+      <Info />
       <Features />
       <Resources />
       <Feedback />

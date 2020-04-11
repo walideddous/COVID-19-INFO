@@ -11,7 +11,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     };
 
     fetchAPI();
-  }, [fetchDailyData]);
+  }, []);
 
   const [dailyData, setDailyData] = useState([]);
 
@@ -61,7 +61,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
   return (
-    <div className={styles.container}>{country ? BarChar : lineChart}</div>
+    <div className={styles.container} id='Chart'>
+      {country ? BarChar : lineChart}
+    </div>
   );
 };
 

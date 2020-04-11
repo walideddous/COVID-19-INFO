@@ -1,6 +1,8 @@
 import axios from "axios";
+import config from "../config/config.json";
 
-const url = "https://covid19.mathdro.id/api";
+const url = config.APIEndPoint;
+const urlcountries = config.APIEndPointcountries;
 
 export const fetchData = async (country) => {
   let changedUrl = url;
@@ -54,7 +56,7 @@ export const fetchCountries = async () => {
 
 export const fetchLongLat = async (country) => {
   try {
-    const response = await axios.get(`https://corona.lmao.ninja/countries`);
+    const response = await axios.get(`${urlcountries}`);
     return response;
   } catch (err) {
     console.log("cant catch Data", err);
