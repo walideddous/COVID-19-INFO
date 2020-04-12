@@ -1,5 +1,6 @@
 {
   "APIEndPoint": "https://covid19.mathdro.id/api",
   "APIEndPointcountries": "https://corona.lmao.ninja/countries",
+  "APIEndPointDaily": "https://api.covid19api.com/country",
   "MapBox": "mapbox://styles/mapbox/streets-v9"
 }

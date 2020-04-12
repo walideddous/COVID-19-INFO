@@ -1,25 +1,43 @@
-# COVID-19 INFO
+# Project Title
 
-This repository contains simple data monitoring for Covid-19 using React.js
+COVID-19 INFO : This repository contains simple data monitoring for Covid-19 using React.js
 
-Demo
+## Getting Started
 
-## Feature Include
+These instructions will get you a copy of the project up and running on your local machine for development purposes.
 
-Hooks
-MapBox
+### Prerequisites
 
-## Instalation
+What things you need to install the software and how to install them
 
+```
+You need to have a MapBox account to get Key API for free
+```
+
+### Installing
+
+```
 git clone git@github.com:alankilalank/COVID-19 INFO.git
 cd COVID-19 INFO
 npm install
 put your API Key to set MapBox ine the (.env) File
 npm start
 Visit http://localhost:3000
+```
 
-## Data Source
+## Built With
 
-Data source from https://covid19.mathdro.id API
+- [ReactJS](https://fr.reactjs.org/) - The web Library
+- [ChartJS](https://www.chartjs.org/) - Javascript Library to set Graphics
+- [MapBox](https://www.mapbox.com/) - Used to generate World Map
 
-If you are a developer, contribute to this project to make it better and help as many people as possible.
+### Source
+
+```
+https://corona.lmao.ninja/countries
+
+https://covid19.mathdro.id/api
+
+https://api.covid19api.com/
+
+```

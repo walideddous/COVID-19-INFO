@@ -21,6 +21,7 @@ const MapCorona = () => {
     const fetchCountriesInfo = async () => {
       setCountries(await fetchLongLat());
     };
+
     fetchCountriesInfo();
   }, []);
 

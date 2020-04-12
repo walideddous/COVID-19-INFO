@@ -3,6 +3,7 @@ import config from "../config/config.json";
 
 const url = config.APIEndPoint;
 const urlcountries = config.APIEndPointcountries;
+const urlcountrydaily = config.APIEndPointDaily;
 
 export const fetchData = async (country) => {
   let changedUrl = url;
@@ -54,9 +55,27 @@ export const fetchCountries = async () => {
   }
 };
 
-export const fetchLongLat = async (country) => {
+export const fetchLongLat = async () => {
   try {
     const response = await axios.get(`${urlcountries}`);
+    return response;
+  } catch (err) {
+    console.log("cant catch Data", err);
+  }
+};
+
+export const fetchDailyDataPerCountry = async (country) => {
+  try {
+    const resConfirmed = await axios.get(
+      `${urlcountrydaily}/${country}/status/confirmed`
+    );
+    const resDeaths = await axios.get(
+      `${urlcountrydaily}/${country}/status/deaths`
+    );
+    const resRecovered = await axios.get(
+      `${urlcountrydaily}/${country}/status/recovered`
+    );
+    const response = [resConfirmed, resDeaths, resRecovered];
     return response;
   } catch (err) {
     console.log("cant catch Data", err);

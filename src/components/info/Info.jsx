@@ -9,7 +9,7 @@ import TableCountries from "./Table/Table";
 import coronaImage from "../../img/corona.png";
 
 // Api fetch data
-import { fetchData } from "./../../api";
+import { fetchData, fetchDailyDataPerCountry } from "./../../api";
 // Css
 import styles from "./info.module.css";
 
@@ -21,7 +21,7 @@ const Info = () => {
 
     fetchAPI();
   }, []);
-
+  const [info, setInfo] = useState([]);
   const [data, setData] = useState({});
   const [country, setCountry] = useState("");
   const [click, setClick] = useState({
@@ -31,6 +31,8 @@ const Info = () => {
 
   const handleChangeCountry = async (country) => {
     const res = await fetchData(country);
+    const responseTable = await fetchDailyDataPerCountry(country);
+    setInfo(responseTable);
     setData(res);
     setCountry(country);
   };
@@ -40,7 +42,7 @@ const Info = () => {
         <img className={styles.image} src={coronaImage} alt='COVID-19' />
         <CountryPicker handleChangeCountry={handleChangeCountry} />
         <Cards data={data} />
-        <Chart data={data} country={country} />
+        <Chart data={data} country={country} info={info} />
         <div className={styles.buttons} id='Map'>
           <button
             className={click.map ? "btn btn-primary active" : "btn btn-primary"}
@@ -68,7 +70,7 @@ const Info = () => {
             Table
           </button>
         </div>
-        {click.map ? <MapCorona country={country} /> : <TableCountries />}
+        {click.map ? <MapCorona /> : <TableCountries />}
       </div>
       <Contact />
     </Fragment>
