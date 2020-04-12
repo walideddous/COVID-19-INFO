@@ -1,5 +1,5 @@
 import React from "react";
-import help from "../../../img/Help.png";
+import help from "../img/Help.png";
 
 const Contact = () => {
   return (
@@ -10,9 +10,8 @@ const Contact = () => {
             <img src={help} alt='logo' />
           </a>
           <p>
-            At our core is a collection of design and development solutions
-            thats represent everything your business to compare in the modern
-            marketplace
+            To see the source code click on the Github logo and if you're a
+            developer help me improve this project
           </p>
           <a
             href='https://github.com/walideddous/Help-against-COVID-19'

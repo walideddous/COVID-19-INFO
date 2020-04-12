@@ -31,12 +31,12 @@ const CountryPicker = ({ handleChangeCountry }) => {
           ))}
       </NativeSelect>
       <Link
-        to='Chart'
+        to='Map'
         smooth={true}
         duration={1000}
         className='btn btn-primary m-2'
       >
-        <span style={{ color: "white" }}>Click to See Map and Statistic</span>
+        <span style={{ color: "white" }}>Click to See Map and Table</span>
       </Link>
     </FormControl>
   );

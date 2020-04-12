@@ -3,7 +3,7 @@ import Cards from "./Cards/Cards";
 import Chart from "./Chart/Chart";
 import CountryPicker from "./CountryPicker/CountryPicker";
 import MapCorona from "./map/Map";
-import Contact from "../home/components/Contact";
+import Contact from "../Contact";
 import TableCountries from "./Table/Table";
 // Image
 import coronaImage from "../../img/corona.png";
@@ -40,27 +40,35 @@ const Info = () => {
         <img className={styles.image} src={coronaImage} alt='COVID-19' />
         <CountryPicker handleChangeCountry={handleChangeCountry} />
         <Cards data={data} />
-        <div className={styles.buttons}>
+        <Chart data={data} country={country} />
+        <div className={styles.buttons} id='Map'>
           <button
-            className='btn btn-primary'
+            className={click.map ? "btn btn-primary active" : "btn btn-primary"}
             onClick={() => {
-              setClick({ map: true, table: false });
+              setClick({
+                map: true,
+                table: false,
+              });
             }}
             active
           >
             Map
           </button>
           <button
-            className='btn btn-primary'
+            className={
+              click.table ? "btn btn-primary active" : "btn btn-primary"
+            }
             onClick={() => {
-              setClick({ map: false, table: true });
+              setClick({
+                map: false,
+                table: true,
+              });
             }}
           >
             Table
           </button>
         </div>
         {click.map ? <MapCorona country={country} /> : <TableCountries />}
-        <Chart data={data} country={country} />
       </div>
       <Contact />
     </Fragment>

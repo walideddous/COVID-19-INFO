@@ -1,13 +1,12 @@
 import React from "react";
-// import { Link } from "react-scroll";
-import { Link } from "react-router-dom";
-import help from "../img/Help.png";
+import { Link } from "react-scroll";
+import ReactLogo from "../img/logo512.png";
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
+    <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
       <a className='navbar-brand' href='/'>
-        <img src={help} alt='help' /> Help Covid-19
+        <img src={ReactLogo} alt='help' /> Covid-19 INFO
       </a>
       <button
         className='navbar-toggler'
@@ -20,12 +19,7 @@ const Navbar = () => {
       <div className='collapse navbar-collapse' id='navbarResponsive'>
         <ul className='navbar-nav ml-auto'>
           <li className='nav-item'>
-            <Link className='nav-link' to='/'>
-              Home
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link className='nav-link' to='/info'>
+            <Link to='Map' smooth={true} duration={1000} className='nav-link'>
               Map
             </Link>
           </li>
