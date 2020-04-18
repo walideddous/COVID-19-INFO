@@ -1,6 +1,6 @@
 # Project Title
 
-COVID-19 INFO : This repository contains simple data monitoring for Covid-19 using React.js
+COVID-19 INFO : This repository contains simple data monitoring for Covid-19 using React.js https://helpcovid-19.netlify.app/
 
 ## Getting Started
 
@@ -18,10 +18,15 @@ You need to have a MapBox account to get Key API for free
 
 ```
 git clone git@github.com:alankilalank/COVID-19 INFO.git
+
 cd COVID-19 INFO
+
 npm install
+
 put your API Key to set MapBox ine the (.env) File
+
 npm start
+
 Visit http://localhost:3000
 ```
 
