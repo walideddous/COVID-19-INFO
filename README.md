@@ -39,7 +39,7 @@ Visit http://localhost:3000
 ### Source
 
 ```
-https://corona.lmao.ninja/countries
+https://corona.lmao.ninja/v2/countries
 
 https://covid19.mathdro.id/api
 
