@@ -17,7 +17,7 @@ You need to have a MapBox account to get Key API for free
 ### Installing
 
 ```
-git clone git@github.com:alankilalank/COVID-19 INFO.git
+git clone https://github.com/walideddous/COVID-19-INFO.git
 
 cd COVID-19 INFO
 
